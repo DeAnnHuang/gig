@@ -1,0 +1,16 @@
+.main {
+    .H_group {
+        display: inline;
+        @include Flex(center, space-between);
+        .icon_group {
+            a {
+                margin: 0 3px;
+            }
+        }
+    }
+    .textGroup {
+        padding-top: 40vh;
+        text-align: right;
+    }
+    
+}

@@ -1,0 +1,76 @@
+///////////
+// SLOPE //
+///////////
+$color:black;
+$color2:white;
+$degree:5deg;
+$content:80vw;
+
+/** @type {[variable]} 
+ * [block padding width,
+ *  if the block content is very long,
+ *  or the degree is large, it will 
+ *  you may adjust this value.] */
+
+$expansion:7vw;
+
+/** @type {[variable]} [block padding height] */
+
+$padding:7vw;
+
+/** @type {[const]} [make block padding height balance in visual.] */
+
+$bottom:$padding + (tan($degree)*(100vw + $expansion*2));
+
+/**  */
+
+body {
+    background: $color2;
+}
+
+.se-container {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    .se-slope {
+        margin-left: -$expansion;
+        margin-right: -$expansion;
+        @include transform-origin(left, center);
+        .se-content {
+            margin: 0 auto;
+            div {
+                width: $content;
+                margin: 0 auto;
+            }
+        }
+        &:nth-child(odd) {
+            // background: $color2;
+            background-image: url(https://unsplash.it/1980/800);
+            background-size: cover;
+            @include transform(rotate($degree));
+            margin-top: -(tan($degree)*(100vw + $expansion*2)*2);
+            .se-content {
+                @include transform(rotate(-$degree)); //fix
+                color: $color;
+                padding: $padding 0 $bottom 0;
+            }
+        }
+        &:nth-child(even) {
+            // background: rgba($color, 0.7);
+            background-image: url(https://unsplash.it/1980/900);
+            background-size: cover;
+            @include transform(rotate(-$degree));
+            .se-content {
+                @include transform(rotate($degree)); //fix
+                color: $color2;
+                padding: $padding 0 $bottom 0;
+            }
+        }
+        &:first-child {
+            margin-top: -(tan($degree)*(100vw + $expansion*2));
+        }
+        &:last-child {
+            margin-bottom: -((tan($degree)*(100vw + $expansion*2)) + $bottom - $padding);
+        }
+    }
+}
