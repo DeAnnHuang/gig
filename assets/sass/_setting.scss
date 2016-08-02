@@ -1,9 +1,9 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-@import url(//fonts.googleapis.com/earlyaccess/Bebas.css);
+@include font-face("Bebas", font-files("bebas.ttf"));
+
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Noto Sans TC', 'PingFang TC', "微軟正黑體";
+    font-family: 'Noto Sans TC', 'PingFang TC', "微軟正黑體","sans-serif ";
     font-size: 16px;
 }
 

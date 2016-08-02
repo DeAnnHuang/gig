@@ -1,16 +1,126 @@
-.main {
-    .H_group {
-        display: inline;
-        @include Flex(center, space-between);
-        .icon_group {
-            a {
-                margin: 0 3px;
+    .E {
+        font-family: 'Bebas', 'Noto Sans TC', 'PingFang TC', "微軟正黑體", "sans-serif ";
+        font-weight: 500!important;
+    }
+    
+    .textGroup {
+        h1 {
+            @include fontSize(5rem);
+            font-weight: bold;
+        }
+        h2 {
+            @include fontSize(3rem);
+            // font-weight: 700;
+        }
+        h3 {
+            @include fontSize(2rem);
+            // font-weight: 700;
+        }
+        h4 {
+            @include fontSize(1.8rem);
+            // font-size: 600;
+        }
+        span {
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+        }
+    }
+    
+    $degree:5deg;
+    .slope {
+        @include transform(rotate(-$degree));
+    }
+    
+    .main {
+        .LiveLogo {
+            width: 600px;
+            display: block;
+            margin: auto;
+        }
+        .H_group {
+            display: inline;
+            @include Flex(center, space-between);
+            .icon_group {
+                a {
+                    margin: 0 3px;
+                    img {
+                        width: 3vw;
+                        height: auto;
+                    }
+                }
+            }
+            .logo {
+                width: 150px;
+                height: auto;
+            }
+        }
+        .textGroup {
+            padding-top: 3vmin;
+            text-align: right;
+            color: #000;
+            h4,
+            h3 {
+                font-weight: bold;
             }
         }
     }
-    .textGroup {
-        padding-top: 40vh;
-        text-align: right;
+    
+    @media screen and (max-width: 414px) {
+        .textGroup {
+            h1 {
+                @include fontSize(2.2rem);
+                font-weight: bold;
+            }
+            h2 {
+                @include fontSize(1.2rem);
+                // font-weight: 700;
+            }
+            h3 {
+                @include fontSize(1rem);
+                // font-weight: 700;
+            }
+            h4 {
+                @include fontSize(0.9rem);
+                // font-size: 600;
+            }
+            span {
+                font-size: 0.8rem;
+                line-height: 0.8rem;
+            }
+        }
+        .main {
+            .H_group {
+                .logo {
+                    width: 100px;
+                    height: auto;
+                }
+                .icon_group a img {
+                    width: 4vh;
+                    height: auto;
+                }
+            }
+        }
     }
     
-}
+    @media screen and (max-width: 414px) {
+        .main {
+            .H_group .icon_group {
+                @include Flex(center, center);
+                @include flex-direction(column);
+                img {
+                    margin-top: 5px;
+                }
+            }
+            .textGroup {
+                h1 {
+                    font-size: 7.7vw;
+                }
+                h4 {
+                    font-size: 3.5vw;
+                }
+            }
+            .LiveLogo {
+                width: 300px;
+            }
+        }
+    }

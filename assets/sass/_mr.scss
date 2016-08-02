@@ -1,0 +1,182 @@
+.Wrap {
+    width: 90vw;
+    display: inline-flex;
+    flex-wrap: wrap;
+    vertical-align: top;
+    margin: 8vmin;
+    margin-left: 13vmin;
+    // border: 1px solid #000;
+}
+
+.Name {
+    .ARTISTS {
+        position: relative;
+    }
+    .NameGroup {
+        margin-top: 8vmin;
+        h1 {
+            position: relative;
+            padding-left: 60px;
+            .about {
+                position: absolute;
+                left: 10px;
+                top: 15px;
+                -webkit-writing-mode: vertical-rl;
+                writing-mode: vertical-rl;
+                @include fontSize(2rem);
+                letter-spacing: 5px;
+            }
+        }
+    }
+}
+
+.Interduce {
+    margin-top: 8vmin;
+    p {
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.8rem;
+        a {
+            color: #fff;
+            &:hover {
+                color: lightseagreen;
+            }
+        }
+    }
+}
+
+.MV {
+    iframe {
+        width: 38vw;
+        height: 38vw*0.5625;
+    }
+}
+
+.BTN {
+    position: relative;
+    margin-top: 10px;
+    .warning {
+        top: 20vmin;
+        left: 11.8vw;
+        color: #fff;
+    }
+    .btnGroup {
+        a {
+            color: black;
+            @include transition(all 0.8s);
+            letter-spacing: 0;
+            h3 {
+                line-height: 2rem;
+                padding: 5px 15px;
+                padding-bottom: 10px;
+                margin: 10px;
+                margin-left: 0;
+                display: inline-block;
+                background: yellow;
+                font-weight: bold;
+            }
+            &:last-child {
+                display: inline-block;
+            }
+            &:hover {
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .Wrap {
+        width: 84vw;
+        margin-left: 8vmin;
+    }
+    .Name {
+        .NameGroup {
+            h1 {
+                padding-left: 40px;
+                .about {
+                    left: 10px;
+                    top: 10px;
+                    @include fontSize(1rem);
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+    .Interduce {
+        margin-top: 5vmin;
+        p {
+            font-size: 0.8rem;
+            line-height: 1.2rem;
+        }
+    }
+    .MV {
+        margin-top: 8vmin;
+        iframe {
+            width: 80vw;
+            height: 80vw*0.5625;
+        }
+    }
+    .BTN {
+        text-align: right;
+        .warning {
+            top: 25vmin;
+            left: 0;
+            text-align: right;
+        }
+        .btnGroup {
+            a {
+                color: black;
+                h3 {
+                    line-height: 1rem;
+                    padding: 5px 8px;
+                    padding-bottom: 8px;
+                    margin: 3px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .G {
+        margin: 0 50px;
+        &:first-child {
+            @include Flex(flex-start, space-between);
+        }
+        &:last-child {
+            @include Flex(flex-start, space-between);
+        }
+    }
+    .Name {
+        order: 2;
+        display: inline-block;
+        margin-left: 2vw;
+        .textGroup,
+        .slope,
+        .ARTISTS,
+        .NameGroup {
+            width: 40vw;
+            display: inline-block;
+        }
+    }
+    .MV {
+        order: 1;
+        display: inline-block;
+        margin-top: 13vh;
+    }
+    .Interduce {
+        order: 4;
+        display: inline-block;
+        margin-top: -100px;
+        p {
+            width: 40vw;
+        }
+    }
+    .BTN {
+        order: 3;
+        display: inline-block;
+        margin-top: 100px;
+    }
+}

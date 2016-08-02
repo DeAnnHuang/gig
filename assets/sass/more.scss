@@ -1,0 +1,39 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "setting.scss";
+body {
+    color: #fff;
+    @include background-size(cover);
+    background-position: center 0%;
+    -webkit-background-attachment: fixed;
+    background-attachment: fixed;
+    width: 100vw;
+    overflow-x: hidden;
+    div {
+        width: 80vw;
+        margin: 0 auto;
+    }
+}
+
+@import "main.scss";
+.main .H_group {
+    margin-top: 5vmin;
+}
+
+@import "layout.scss";
+@import "mr.scss";
+@import "footer.scss";
+.footer {
+    // margin-top: 8vmin;
+    width: 100vw;
+    background: rgba(#000, 0.5);
+}
+
+@media screen and (max-width:414px) {
+    body {
+        background-attachment: scroll;
+    }
+    .footer {
+        margin-top: 5vh;
+    }
+}

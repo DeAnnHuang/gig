@@ -1,0 +1,206 @@
+.content {
+    .warning {
+        position: absolute;
+        bottom: 0;
+        left: 3vw;
+        span {
+            // background: yellow;
+            border: 1px yellow solid;
+            color: yellow;
+            padding: 3px;
+            @include transition(all 0.8s);
+            &:hover {
+                background: yellow;
+                // border: none;
+                color: #000;
+            }
+        }
+    }
+    .y_bg {
+        background: yellow;
+        position: absolute;
+        opacity: 0;
+        @include transition(all 0.3s);
+        // z-index: -999;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .textGroup {
+        z-index: 2;
+    }
+    .artistImg {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        z-index: -1;
+    }
+    .ARTISTS {
+        h2 {
+            display: inline;
+            line-height: 0;
+        }
+    }
+    .NameGroup {
+        pointer-events: none;
+        h1,
+        h2 {
+            padding: 0 20px;
+            display: table;
+            color: black;
+            background: yellow;
+            margin: -2px 0;
+        }
+        h1 {
+            font-weight: bold;
+        }
+    }
+    .btnGroup {
+        margin-bottom: 5vh;
+        a {
+            @include transition(all, 0.8s);
+            color: black;
+            h3 {
+                padding: 0 20px;
+                margin: 10px;
+                display: inline-block;
+                background: yellow;
+            }
+            &:last-child {
+                display: block;
+            }
+        }
+    }
+    .DateGroup {
+        display: inline-block;
+    }
+}
+
+.Layout1 {
+    position: relative;
+    .content {
+        @include Flex(flex-start, space-between);
+        &:last-child {
+            @include Flex(flex-end, space-between);
+            margin-top: 30vh!important;
+        }
+        .y_bg {
+            width: 60vw;
+            height: 165px;
+            margin-top: -2px;
+        }
+        .artistImg {
+            top: 1vw;
+            left: 8vw;
+        }
+        .NameGroup {
+            margin-right: -2vw;
+        }
+    }
+}
+
+.Layout2 {
+    position: relative;
+    .content {
+        .warning {
+            bottom: -5vh;
+        }
+        .artistImg {
+            top: 8vw;
+            left: 35vw;
+        }
+        .y_bg {
+            width: 40vw;
+            height: 165px;
+            margin-top: -2px;
+            left: -20.5vw;
+            z-index: -1;
+        }
+        .NameGroup {
+            z-index: 2;
+            pointer-events: none;
+        }
+        .DateGroup {
+            margin-left: 25vw!important;
+        }
+        &:last-child {
+            margin-top: 10vh!important;
+        }
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .content {
+        .warning {
+            right: 0;
+            font-size: 12px;
+            text-align: center;
+            text-align: right;
+        }
+        .artistImg {
+            width: 200px;
+            height: 200px;
+        }
+        .btnGroup {
+            text-align: right;
+            margin-top: 5vh;
+            // margin-bottom: 5vh;
+            a {
+                color: black;
+                h3 {
+                    padding: 0 10px;
+                    margin: 5px;
+                    margin-right: 0;
+                }
+                &:last-child {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .Layout1 {
+        .content {
+            &:last-child {
+                margin-top: 10vh!important;
+                display: inline-flex;
+                flex-wrap: wrap;
+                margin: 5px 5px 40px;
+                flex-wrap: wrap-reverse;
+                justify-content: flex-end;
+            }
+            .artistImg {
+                top: 10vw;
+                left: 1vw;
+            }
+            .NameGroup {
+                h1,
+                h2 {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+    .Layout2 {
+        .content {
+            margin-bottom: 8vh !important;
+            &:last-child {
+                margin-top: 5vh !important;
+            }
+            .DateGroup {
+                margin-left: 8vw!important;
+            }
+            .NameGroup {
+                margin-top: 8vh!important;
+            }
+            .warning {
+                text-align: left;
+            }
+            .NameGroup {
+                h1,
+                h2 {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+}

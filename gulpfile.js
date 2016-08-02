@@ -65,6 +65,7 @@ gulp.task('styles', function() {
             css: 'build/css',
             sass: 'assets/sass',
             style: 'compressed',
+            font: 'build/fonts',
             comments: false
         }))
         .pipe(livereload())
