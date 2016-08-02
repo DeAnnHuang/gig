@@ -1,1 +1,0 @@
-jQuery(document).ready(function(d){d(window).width()<=768&&d("body").css("background-image","url(https://unsplash.it/1280/800)")});
