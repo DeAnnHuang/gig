@@ -1,23 +1,25 @@
+$highLight: #FFE200;
 .content {
     .warning {
+        display: none;
         position: absolute;
         bottom: 0;
         left: 3vw;
         span {
-            // background: yellow;
-            border: 1px yellow solid;
-            color: yellow;
+            // background: $highLight;
+            border: 1px $highLight solid;
+            color: $highLight;
             padding: 3px;
-            @include transition(all 0.8s);
+            @include transition(all 0.3s);
             &:hover {
-                background: yellow;
+                background: $highLight;
                 // border: none;
                 color: #000;
             }
         }
     }
     .y_bg {
-        background: yellow;
+        background: $highLight;
         position: absolute;
         opacity: 0;
         @include transition(all 0.3s);
@@ -31,40 +33,46 @@
     }
     .artistImg {
         position: absolute;
-        width: 600px;
-        height: 600px;
+        width: 540px;
+        height: 540px;
         z-index: -1;
     }
     .ARTISTS {
+        margin-bottom: 4.5vw;
         h2 {
             display: inline;
             line-height: 0;
         }
     }
     .NameGroup {
-        pointer-events: none;
+        // pointer-events: none;
         h1,
         h2 {
-            padding: 0 20px;
+            padding: 3px 20px;
             display: table;
             color: black;
-            background: yellow;
+            background: $highLight;
             margin: -2px 0;
         }
         h1 {
             font-weight: bold;
         }
+        h4 {
+            margin-top: 20px;
+        }
     }
     .btnGroup {
-        margin-bottom: 5vh;
         a {
             @include transition(all, 0.8s);
             color: black;
             h3 {
-                padding: 0 20px;
+                padding: 10px 18px 5px 18px;
                 margin: 10px;
                 display: inline-block;
-                background: yellow;
+                background: $highLight;
+                @include background-image(linear-gradient(to bottom right, $highLight, #dba416));
+                line-height: 2rem;
+                font-weight: bold;
             }
             &:last-child {
                 display: block;
@@ -79,22 +87,34 @@
 .Layout1 {
     position: relative;
     .content {
-        @include Flex(flex-start, space-between);
+        @include Flex(center, space-between);
         &:last-child {
             @include Flex(flex-end, space-between);
-            margin-top: 30vh!important;
+            margin-top: 300px!important;
+            margin-bottom: 5vh!important;
         }
         .y_bg {
             width: 60vw;
-            height: 165px;
+            height: 158px;
             margin-top: -2px;
         }
         .artistImg {
-            top: 1vw;
+            top: 4.4vw;
             left: 8vw;
         }
         .NameGroup {
-            margin-right: -2vw;
+            margin-right: 225px;
+            @include transition(all 0.3s);
+            &:hover {
+                .L1_Hover {
+                    @include transition(all 0.3s);
+                    padding-right: 60vw;
+                    margin-right: -58vw;
+                }
+            }
+        }
+        .DateGroup {
+            margin-right: 200px;
         }
     }
 }
@@ -109,22 +129,29 @@
             top: 8vw;
             left: 35vw;
         }
-        .y_bg {
-            width: 40vw;
-            height: 165px;
-            margin-top: -2px;
-            left: -20.5vw;
-            z-index: -1;
-        }
         .NameGroup {
-            z-index: 2;
+            // z-index: 2;
+            // pointer-events: none;
+            margin-top: 20px!important;
+            display: block;
+            &:hover {
+                @include transition(all 0.3s);
+                .YOYO_Hover {
+                    @include transition(all 0.3s);
+                    padding-left: 20vw;
+                    margin-left: -18vw;
+                }
+            }
+        }
+        .test {
             pointer-events: none;
         }
         .DateGroup {
             margin-left: 25vw!important;
         }
         &:last-child {
-            margin-top: 10vh!important;
+            margin-top: 50px!important;
+            margin-bottom: 5vh!important;
         }
     }
 }
@@ -132,25 +159,28 @@
 @media screen and (max-width: 414px) {
     .content {
         .warning {
+            display: initial;
             right: 0;
+            bottom: 55px;
             font-size: 12px;
             text-align: center;
             text-align: right;
         }
         .artistImg {
-            width: 200px;
-            height: 200px;
+            width: 48vw;
+            height: 48vw;
         }
         .btnGroup {
             text-align: right;
-            margin-top: 5vh;
-            // margin-bottom: 5vh;
+            margin-top: 30px;
+            margin-bottom: 50px;
             a {
                 color: black;
                 h3 {
-                    padding: 0 10px;
+                    padding: 7px 10px 0 10px;
                     margin: 5px;
                     margin-right: 0;
+                    line-height: 1.2rem;
                 }
                 &:last-child {
                     display: inline-block;
@@ -160,8 +190,9 @@
     }
     .Layout1 {
         .content {
+            @include Flex(flex-start, space-between);
             &:last-child {
-                margin-top: 10vh!important;
+                margin-top: 60px!important;
                 display: inline-flex;
                 flex-wrap: wrap;
                 margin: 5px 5px 40px;
@@ -173,10 +204,22 @@
                 left: 1vw;
             }
             .NameGroup {
+                margin-right: -10px;
                 h1,
                 h2 {
-                    padding: 0 10px;
+                    padding: 5px 7px;
                 }
+                &:hover {
+                    .L1_Hover {
+                        @include transition(all 0.3s);
+                        padding-right: 7px;
+                        margin-right: 0;
+                    }
+                }
+            }
+            .DateGroup {
+                margin-top: 20px;
+                margin-right: 10px;
             }
         }
     }
@@ -184,22 +227,70 @@
         .content {
             margin-bottom: 8vh !important;
             &:last-child {
-                margin-top: 5vh !important;
+                margin-top: 50px !important;
+                margin-bottom: 70px!important;
+            }
+            .artistImg {
+                top: 5vw;
+                left: 41vw;
             }
             .DateGroup {
-                margin-left: 8vw!important;
+                margin-left: 9vw!important;
             }
             .NameGroup {
-                margin-top: 8vh!important;
-            }
-            .warning {
-                text-align: left;
-            }
-            .NameGroup {
+                margin-top: 60px!important;
+                display: block;
                 h1,
                 h2 {
                     padding: 0 10px;
                 }
+                &:hover {
+                    @include transition(all 0.3s);
+                    .YOYO_Hover {
+                        @include transition(all 0.3s);
+                        padding-left: 10px;
+                        margin-left: 0;
+                    }
+                }
+            }
+            .warning {
+                text-align: left;
+            }
+            .btnGroup {
+                // margin-bottom: 50px!important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .content {
+        .artistImg {
+            width: 45vw;
+            height: 45vw;
+        }
+        .btnGroup {
+            a {
+                h3 {
+                    padding: 5px 8px 0 8px;
+                    font-size: 0.9rem;
+                    line-height: 1.1rem;
+                }
+            }
+        }
+    }
+    .Layout1 {
+        .content {
+            .DateGroup {
+                margin-top: 20px;
+                margin-right: 0;
+            }
+        }
+    }
+    .Layout2 {
+        .content {
+            .DateGroup {
+                margin-left: 5vw!important;
             }
         }
     }

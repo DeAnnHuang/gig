@@ -1,126 +1,195 @@
-    .E {
-        font-family: 'Bebas', 'Noto Sans TC', 'PingFang TC', "微軟正黑體", "sans-serif ";
-        font-weight: 500!important;
+.E {
+    font-family: 'Bebas', 'Noto Sans TC', 'PingFang TC', "微軟正黑體", "sans-serif ";
+    font-weight: 500!important;
+}
+
+.D {
+    font-family: 'DIN', 'Bebas', 'Noto Sans TC', 'PingFang TC', "微軟正黑體", "sans-serif ";
+    margin-top: 2px;
+}
+
+.Didilong {
+    font-size: 3.7rem!important;
+}
+
+.livemusicWrap {
+    top: -100%;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    @include Flex(center, center);
+    background: rgba(0, 0, 0, 0.8);
+    .LiveMusic {
+        @include iframeWH(65vw);
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+        @include Flex(center, center);
+        body {
+            background-color: transparent;
+        }
     }
-    
+    .close {
+        position: absolute;
+        right: 10%;
+        top: 8%;
+        opacity: 0.8;
+        cursor: pointer;
+        p {
+            color: #fff;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.textGroup {
+    h1 {
+        @include fontSize(4.5rem);
+        font-weight: 700;
+    }
+    h2 {
+        // @include fontSize(2.8rem);
+        font-size: 2.6rem;
+        line-height: 3.5rem;
+        // font-weight: 700;
+    }
+    h3 {
+        @include fontSize(1.8rem);
+        // font-weight: 700;
+    }
+    h4 {
+        @include fontSize(1.4rem);
+        // font-size: 600;
+    }
+    span {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+    }
+}
+
+$degree:5deg;
+.slope {
+    @include transform(rotate(-$degree));
+}
+
+.main {
+    .LiveLogo {
+        width: 540px;
+        display: block;
+        margin: auto;
+    }
+    .H_group {
+        display: inline;
+        @include Flex(center, space-between);
+        .icon_group {
+            a {
+                margin: 0 3px;
+                img {
+                    width: 3vw;
+                    height: auto;
+                }
+            }
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+    }
+    .textGroup {
+        padding-top: 3vmin;
+        text-align: right;
+        color: #000;
+        h4,
+        h3 {
+            font-weight: bold;
+        }
+    }
+}
+
+@media screen and (max-width: 414px) {
     .textGroup {
         h1 {
-            @include fontSize(5rem);
+            // @include fontSize(2rem);
+            font-size: 2rem;
+            line-height: 2.5rem;
             font-weight: bold;
         }
         h2 {
-            @include fontSize(3rem);
+            // @include fontSize(1.2rem);
+            font-size: 1.2rem;
+            line-height: 1.5rem;
             // font-weight: 700;
         }
         h3 {
-            @include fontSize(2rem);
+            // @include fontSize(1rem);
+            font-size: 1rem;
+            line-height: 1.3rem;
             // font-weight: 700;
         }
         h4 {
-            @include fontSize(1.8rem);
+            // @include fontSize(0.9rem);
+            font-size: 0.9rem;
+            line-height: 1.2rem;
             // font-size: 600;
         }
         span {
-            font-size: 1.2rem;
-            line-height: 1.2rem;
+            font-size: 0.8rem;
+            line-height: 0.8rem;
         }
     }
-    
-    $degree:5deg;
-    .slope {
-        @include transform(rotate(-$degree));
-    }
-    
     .main {
-        .LiveLogo {
-            width: 600px;
-            display: block;
-            margin: auto;
-        }
         .H_group {
-            display: inline;
-            @include Flex(center, space-between);
-            .icon_group {
-                a {
-                    margin: 0 3px;
-                    img {
-                        width: 3vw;
-                        height: auto;
-                    }
-                }
-            }
             .logo {
-                width: 150px;
+                width: 100px;
                 height: auto;
             }
-        }
-        .textGroup {
-            padding-top: 3vmin;
-            text-align: right;
-            color: #000;
-            h4,
-            h3 {
-                font-weight: bold;
-            }
-        }
-    }
-    
-    @media screen and (max-width: 414px) {
-        .textGroup {
-            h1 {
-                @include fontSize(2.2rem);
-                font-weight: bold;
-            }
-            h2 {
-                @include fontSize(1.2rem);
-                // font-weight: 700;
-            }
-            h3 {
-                @include fontSize(1rem);
-                // font-weight: 700;
-            }
-            h4 {
-                @include fontSize(0.9rem);
-                // font-size: 600;
-            }
-            span {
-                font-size: 0.8rem;
-                line-height: 0.8rem;
-            }
-        }
-        .main {
-            .H_group {
-                .logo {
-                    width: 100px;
-                    height: auto;
-                }
-                .icon_group a img {
-                    width: 4vh;
-                    height: auto;
-                }
-            }
-        }
-    }
-    
-    @media screen and (max-width: 414px) {
-        .main {
-            .H_group .icon_group {
+            .icon_group {
                 @include Flex(center, center);
                 @include flex-direction(column);
-                img {
+                a img {
+                    width: 4vh;
+                    height: auto;
                     margin-top: 5px;
                 }
             }
-            .textGroup {
-                h1 {
-                    font-size: 7.7vw;
-                }
-                h4 {
-                    font-size: 3.5vw;
-                }
+        }
+        .textGroup {
+            h3 {
+                margin-top: 5px;
             }
-            .LiveLogo {
-                width: 300px;
+            h1 {
+                font-size: 7vw;
+            }
+            h4 {
+                font-size: 3.5vw;
             }
         }
+        .LiveLogo {
+            width: 270px;
+        }
     }
+    .Didilong {
+        font-size: 1.8rem!important;
+    }
+    .livemusicWrap {
+        .LiveMusic {
+            @include iframeWH(95vw);
+        }
+        .close {
+            right: 3%;
+            top: 25%;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .textGroup {
+        h1 {
+            // @include fontSize(2rem);
+            font-size: 1.8rem;
+            line-height: 2.3rem;
+            font-weight: bold;
+        }
+    }
+}

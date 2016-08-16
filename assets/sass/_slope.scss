@@ -70,6 +70,9 @@ body {
             margin-top: -(tan($degree)*(100vw + $expansion*2));
         }
         &:last-child {
+            .se-content {
+                    padding-top: 4vw;
+                }
             margin-bottom: -((tan($degree)*(100vw + $expansion*2)));
         }
     }
@@ -78,6 +81,7 @@ body {
 @media screen and (max-width: 414px) {
     $expansion: 8vw;
     $content: 90vw;
+    $padding: 15vw;
     .se-container {
         display: block;
         width: 100%;
@@ -121,6 +125,9 @@ body {
                 margin-top: -(tan($degree)*(100vw + $expansion*2));
             }
             &:last-child {
+                .se-content {
+                    padding-top: 4vw;
+                }
                 margin-bottom: -((tan($degree)*(100vw + $expansion*2)));
             }
         }

@@ -14,8 +14,8 @@
         text-decoration: none;
         color: #fff;
         &:hover {
-            color: lightseagreen;
-            transition: color 0.8s;
+            color: $highLight;
+            transition: color 0.5s;
         }
     }
 }
@@ -30,7 +30,17 @@
     .footer {
         width: 100vw;
     }
-    .se-slope .se-content .footer p {
+    .footer p {
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .footer {
+        width: 100vw;
+    }
+    .footer p {
+        font-size: 10px;
+        letter-spacing: -1px;
     }
 }
